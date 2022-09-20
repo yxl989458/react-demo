@@ -1,0 +1,8 @@
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+body{
+  background-image: linear-gradient( to left bottom ,rgba(0, 29, 221, 0.616),rgb(16, 75, 16));
+}

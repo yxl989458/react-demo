@@ -1,0 +1,8 @@
+.login_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient( to top right ,rgba(0, 58, 174, 0.3),rgba(158, 95, 162,.5));
+}
