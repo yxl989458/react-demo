@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "./admin.css";
 import { Button } from "antd";
 //登录的路由组件
-const a = 1;
 const use_list = ["张三", "李四", "王五"];
 export default class Admin extends Component {
   // eslint-disable-next-line no-useless-constructor
@@ -11,7 +10,7 @@ export default class Admin extends Component {
     this.state = {
       num: 1,
     };
-    this.addNum=this.addNum.bind(this)
+    this.addNum = this.addNum.bind(this)
   }
   render() {
     return (
@@ -23,6 +22,7 @@ export default class Admin extends Component {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
+          backgroundColor:"gray"
         }}
       >
         <h1 style={{ color: "red" }}>
@@ -32,7 +32,7 @@ export default class Admin extends Component {
           />
         </h1>
         <ul>
-          {use_list.map((e,index) => (
+          {use_list.map((e, index) => (
             <li style={{ color: "skyblue" }} key={index}>{e}</li>
           ))}
         </ul>
@@ -48,18 +48,27 @@ export default class Admin extends Component {
         <Button type="primary" onClick={this.addNum.bind(this)}>
           按钮er
         </Button>
-        <Button type="primary" onClick={()=>this.addNum()}>
+        <Button type="primary" onClick={() => this.addNum()}>
           按钮three
         </Button>
-        <Button type="primary" onClick={()=>this.addNum}>
-          按钮three
+        <Button type="danger" onClick={() => this.addNum()}>
+          按钮fouter
+        </Button>
+        <Button type="danger" onClick={this.btnLick.bind(this,1)}>
+          按钮five
+        </Button>
+        <Button type="danger" onClick={this.btnLick.bind(this,2)}>
+          按钮five
         </Button>
       </div>
     );
   }
   addNum() {
-this.setState({
-num:this.state.num+1
-})
+    this.setState({
+      num: this.state.num + 1
+    })
+  }
+  btnLick(num){
+    console.log(num);
   }
 }

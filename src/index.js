@@ -12,3 +12,10 @@ root.render(
     <App />
   </React.StrictMode>
 );
+// setTimeout(() => {
+//   root.render(
+//     <React.StrictMode>
+//      <div></div>
+//     </React.StrictMode>
+//   );
+// }, 3000);
