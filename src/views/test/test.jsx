@@ -1,12 +1,14 @@
-import { Button } from "antd"
+import { Button } from "antd";
 import { useEffect, useState } from "react";
-
+import { useSearchParams } from "react-router-dom";
 
 function Test() {
   //hook只能用在函数组件中的最顶层
   // 1.hook
-  const [num1, setNum1] = useState(1)
-  const [num2, setNum2] = useState(2)
+  const [URLSearchParams] = useSearchParams();
+  console.log(URLSearchParams.getAll("id"));
+  const [num1, setNum1] = useState(1);
+  const [num2, setNum2] = useState(2);
   // 2.useEffect 模拟mounted 一般用于ajax
   // useEffect(()=>{
   //  console.log('挂在完成')
@@ -19,15 +21,21 @@ function Test() {
   // },[])
   //3.模拟beforeDestroye
   useEffect(() => {
-    return () => { console.log('销毁阶段') }
-  })
+    return () => {
+      console.log("销毁阶段");
+    };
+  });
   return (
     <>
       <div>{num1}</div>
       <h2>{num2}</h2>
-      <Button type="primary" onClick={() => setNum1(num1 + 1)}>button</Button>
-      <Button type="primary" onClick={() => setNum2(num2 + 1)}>button</Button>
+      <Button type="primary" onClick={() => setNum1(num1 + 1)}>
+        button
+      </Button>
+      <Button type="primary" onClick={() => setNum2(num2 + 1)}>
+        button
+      </Button>
     </>
-  )
+  );
 }
-export default Test
+export default Test;

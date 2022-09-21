@@ -6,6 +6,7 @@ import Admin from "./views/admin/admin";
 import Test from "./views/test/test";
 import Componentsprops from "./views/components_props/components_props";
 import Vmode from "./views/v-mode/v-mode";
+import Redux from "./views/redux/redux";
 export default class App extends Component {
   handlerCick = () => {
     console.log("click is button");
@@ -15,10 +16,12 @@ export default class App extends Component {
       <BrowserRouter>
         <Routes>
           <Route path="/Login" element={<Login />} />
-          <Route path="/" element={<Admin />} />
-          <Route path="/Test" element={<Test />} />
-          <Route path="/components_props" element={<Componentsprops />} />
-          <Route path="/Vmode" element={<Vmode />} />
+          <Route path="/" element={<Admin />}>
+            <Route path="/Test" element={<Test />} />
+            <Route path="/components_props" element={<Componentsprops />} />
+            <Route path="/Vmode" element={<Vmode />} />
+            <Route path="/Redux" element={<Redux />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     );
